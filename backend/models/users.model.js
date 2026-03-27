@@ -1,7 +1,7 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 
-const UserSchema = mongoose.schema({
+const UserSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -21,7 +21,7 @@ const UserSchema = mongoose.schema({
         default: true
     },
     password: {
-        type: Number,
+        type: String,
         default: true
     },
     profilePicture: {
