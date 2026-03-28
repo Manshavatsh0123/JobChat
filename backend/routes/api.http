@@ -8,6 +8,7 @@ Content-Type: application/json
   "username": "aman123"
 }
 
+##
 POST http://localhost:9090/api/users/login
 Content-Type: application/json
 
@@ -15,3 +16,14 @@ Content-Type: application/json
   "email": "mansha@gmail.com",
   "password": "123456"
 }
+
+##
+GET http://localhost:9090/api/users/get_user_and_profile
+Content-Type: application/json
+
+{
+  "token": "e1cf1eab5ffdb1806d74b7daf66d7acae2ea3f76045b8e25234aa6519aea0158"
+}
+
+
+//http://localhost:9090/api/users/download_resume?id=69c5f7c1db8df0845de21b8a

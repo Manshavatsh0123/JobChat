@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import router from "./routes/post.routes.js";
 import userRouter from "./routes/users.routes.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -13,11 +15,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
 // Routes
 app.use(router);
 app.use("/api/users", userRouter);
 
+//PDF Generation
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Start Server Function
 const startServer = async () => {
