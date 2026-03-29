@@ -75,7 +75,6 @@ const convertUserDataTOPDF = async (userData) => {
 
 export const register = async (req, res) => {
   try {
-    console.log("BODY:", req.body);
     const { name, email, password, username } = req.body;
 
     // Validation
@@ -132,7 +131,6 @@ export const register = async (req, res) => {
     });
 
   } catch (error) {
-    console.error(error);
     return res.status(500).json({
       success: false,
       message: error.message

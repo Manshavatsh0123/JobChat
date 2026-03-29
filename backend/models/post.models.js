@@ -1,10 +1,9 @@
 import mongoose, { Types } from "mongoose";
 
-
-const PostSchema = mongoose.schema({
+const PostSchema = mongoose.Schema({
     userId: {
-       type:mongoose.schema.Types.ObjectId,
-       ref : 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
     body: {
         type: String,
@@ -24,7 +23,7 @@ const PostSchema = mongoose.schema({
     },
     media: {
         type: String,
-        default: ''
+        default: ""
     },
     active: {
         type: Boolean,
@@ -32,10 +31,10 @@ const PostSchema = mongoose.schema({
     },
     fileType: {
         type: String,
-        default: ''
+        default: ""
     }
-})
+});
 
-const Post = mongoose.model("Post",PostSchema);
+const Post = mongoose.model("Post", PostSchema);
 
 export default Post;

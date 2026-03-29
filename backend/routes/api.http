@@ -25,5 +25,57 @@ Content-Type: application/json
   "token": "e1cf1eab5ffdb1806d74b7daf66d7acae2ea3f76045b8e25234aa6519aea0158"
 }
 
+##
+GET http://localhost:9090/post?token=8ad2750ff56e173d269e40c1cf5bc3bb7a9326ad0947ca52324d12f530806351
+Body - form-data
+token 8ad2750ff56e173d269e40c1cf5bc3bb7a9326ad0947ca52324d12f530806351
+body Hello post
+media file
+
+
+##
+GET http://localhost:9090/posts
+
+{
+    "posts": [
+        {
+            "_id": "69c89be06ac2ea4239aa5279",
+            "userId": {
+                "_id": "69c5f7c1db8df0845de21b8a",
+                "name": "Aman",
+                "username": "aman123",
+                "email": "aman@gmail.com",
+                "profilePicture": "default.jpg"
+            },
+            "body": "Hello post",
+            "likes": 0,
+            "media": "",
+            "active": true,
+            "fileType": "",
+            "createdAt": "2026-03-29T03:26:24.050Z",
+            "updatedAt": "2026-03-29T03:26:24.050Z",
+            "__v": 0
+        },
+        {
+            "_id": "69c89ce59c08d639b545dc8a",
+            "userId": {
+                "_id": "69c5f7c1db8df0845de21b8a",
+                "name": "Aman",
+                "username": "aman123",
+                "email": "aman@gmail.com",
+                "profilePicture": "default.jpg"
+            },
+            "body": "Hello post",
+            "likes": 0,
+            "media": "1774755045734-Screenshot from 2026-03-25 08-43-39.png",
+            "active": true,
+            "fileType": "png",
+            "createdAt": "2026-03-29T03:30:45.833Z",
+            "updatedAt": "2026-03-29T03:30:45.833Z",
+            "__v": 0
+        }
+    ]
+}
+
 
 //http://localhost:9090/api/users/download_resume?id=69c5f7c1db8df0845de21b8a
