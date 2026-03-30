@@ -3,23 +3,37 @@ import Image from "next/image";
 const ProfileCard = ({ name, role, message, image, offset }) => {
     return (
         <div
-            className={`bg-secondary rounded-lg p-6 border border-border hover:shadow-lg transition ${offset ? "ml-12" : ""
+            className={`relative p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${offset ? "ml-12" : ""
                 }`}
-        >
+            style={{
+                background: "linear-gradient(145deg, #ffffff, #f9fafb)",
+                borderColor: "#E5E7EB",
+            }}>
+
             <div className="flex items-start gap-4">
 
-                {/*  Profile Image */}
-                <Image
-                    src={image}
-                    alt={name}
-                    width={48}
-                    height={48}
-                    className="rounded-full object-cover flex-shrink-0"
-                />
-                <div className="flex-1">
-                    <p className="font-semibold text-foreground">{name}</p>
-                    <p className="text-sm text-muted-foreground">{role}</p>
-                    <p className="text-sm text-foreground mt-2">{message}</p>
+                <div className="relative w-12 h-12 flex-shrink-0">
+                    <Image
+                        src={image}
+                        alt={name}
+                        fill
+                        className="rounded-full object-cover border"
+                        style={{ borderColor: "#E5E7EB" }}
+                    />
+                </div>
+
+                <div className="flex-1 space-y-1">
+                    <p className="font-semibold text-[#111827] text-base">
+                        {name}
+                    </p>
+
+                    <p className="text-xs font-medium text-[#6B7280]">
+                        {role}
+                    </p>
+
+                    <p className="text-sm leading-relaxed text-[#374151] mt-2">
+                        {message}
+                    </p>
                 </div>
             </div>
         </div>

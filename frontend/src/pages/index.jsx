@@ -1,8 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-import { Users, Briefcase, TrendingUp, Lock, MessageCircle, Building2, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Users, Briefcase, TrendingUp, Lock, MessageCircle, Building2 } from 'lucide-react';
 import UserLayout from '@/layout/UserLayout';
 import Footer from '@/components/common/Footer';
 import ProfileCard from '@/components/common/ProfileCard';
@@ -50,13 +46,11 @@ export default function Home() {
     <UserLayout>
       <div className="min-h-screen bg-white">
 
-        {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+
             <HeroSection />
 
-            {/* Right Side - Visual */}
             <div className="hidden md:block">
               <div className="space-y-4">
 
@@ -64,7 +58,7 @@ export default function Home() {
                   name="Sarah Chen"
                   role="Product Designer at Google"
                   message="Found my perfect role in 2 weeks"
-                  image="/src/images/Image1.jpg"
+                  image="/images/alex.jpg"
                 />
 
                 <ProfileCard
@@ -72,28 +66,25 @@ export default function Home() {
                   role="Senior Engineer at Meta"
                   message="Connected with amazing mentors"
                   offset={true}
-                  image="/src/images/Image1.jpg"
+                  image="/images/Person2.webp"
                 />
 
                 <ProfileCard
                   name="Jordan Smith"
                   role="CEO at StartUp Inc"
                   message="Built my entire leadership team here"
-                  image="/src/images/image2.avif"
+                  image="/images/Person1.jpg"
                 />
 
               </div>
             </div>
           </div>
 
-          {/* Stats */}
           <StatsSection />
         </section>
 
-        {/* Features Section */}
         <FeaturesSection features={features} />
 
-        {/* CTA Section */}
         <CTASection />
 
         <Footer />
