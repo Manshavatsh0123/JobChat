@@ -1,21 +1,24 @@
 'use client'
 
+import { getAllPosts } from "@/config/redux/action/postAction";
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { useDispatch } from "react-redux"
 
 export default function Dashboard() {
-    const router = useRouter()
+    const router = useRouter();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const token = localStorage.getItem('token')
-            console.log(token);
+        const token = localStorage.getItem('token');
 
-            if (!token) {
-                router.push('/login')
-            }
+        if (!token) {
+            router.push('/login');
+        } else {
+            console.log("DISPATCHING getAllPosts");
+            dispatch(getAllPosts());
         }
-    }, [router])
+    }, [router, dispatch]);
 
     return (
         <div>
