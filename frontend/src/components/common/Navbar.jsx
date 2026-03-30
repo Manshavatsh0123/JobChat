@@ -2,9 +2,11 @@
 import { Menu, X } from 'lucide-react';
 import { Button } from "../ui/button";
 import { useState } from 'react';
+import { useRouter } from "next/navigation";
 
 function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const router = useRouter();
 
     return (
         <nav className="sticky top-0 z-50 backdrop-blur-md border-b"
@@ -32,7 +34,7 @@ function Navbar() {
                         <Button
                             variant="ghost"
                             className="text-[#111827] hover:bg-gray-100"
-                        >
+                            onClick={() => router.push("/login")}>
                             Sign In
                         </Button>
 
