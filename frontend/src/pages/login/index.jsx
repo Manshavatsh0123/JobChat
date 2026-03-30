@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card } from '@/components/ui/card'
-import { Loader2 } from 'lucide-react'
-import { toast } from 'sonner'
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card } from '@/components/ui/card';
+import { Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function AuthPage() {
     const [isSignUp, setIsSignUp] = useState(false)
@@ -15,12 +15,12 @@ export default function AuthPage() {
         email: '',
         password: '',
         username: '',
-    })
+    });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
         setFormData(prev => ({ ...prev, [name]: value }))
-    }
+    };
 
     const handleLogin = async (e) => {
         e.preventDefault()
@@ -34,9 +34,9 @@ export default function AuthPage() {
                     email: formData.email,
                     password: formData.password,
                 }),
-            })
+            });
 
-            const data = await response.json()
+            const data = await response.json();
 
             if (response.ok) {
                 toast.success('Login successful!')
@@ -55,7 +55,7 @@ export default function AuthPage() {
         } finally {
             setIsLoading(false)
         }
-    }
+    };
 
     const handleSignUp = async (e) => {
         e.preventDefault()
@@ -89,9 +89,9 @@ export default function AuthPage() {
         } finally {
             setIsLoading(false)
         }
-    }
+    };
 
-    const handleSubmit = isSignUp ? handleSignUp : handleLogin
+    const handleSubmit = isSignUp ? handleSignUp : handleLogin;
 
     return (
         <div
