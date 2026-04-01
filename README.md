@@ -1,4 +1,5 @@
-🚀 Social Media Web Application
+🚀 CareerChat Web Application -
+
 🌐 Overview
 
 This is a full-stack social media web application where users can create profiles, share posts, interact with others, and build connections.
